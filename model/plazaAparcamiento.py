@@ -1,9 +1,12 @@
-class Cuenta():
+class PlazaAparcamiento():
     def __init__(self, numeroPlaza, estaLibre, cliente, fecha):
-        self.numeroPlaza=numeroPlaza
-        self.estaLibre=estaLibre
-        self.cliente=cliente
-        self.fecha=fecha
+        self.__numeroPlaza=numeroPlaza
+        self.__estaLibre=estaLibre
+        self.__cliente=cliente
+        self.__fecha=fecha
+    def __init__(self, numeroPlaza, estaLibre):
+        self.__numeroPlaza=numeroPlaza
+        self.__estaLibre=estaLibre
 
     @property
     def numeroPlaza(self):
