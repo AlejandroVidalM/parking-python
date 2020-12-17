@@ -1,12 +1,18 @@
+from datetime import date
+from datetime import datetime
 class PlazaAparcamiento():
-    def __init__(self, numeroPlaza, estaLibre, cliente, fecha):
+    def __init__(self, numeroPlaza, estaLibre, cliente, fecha, vehiculo):
         self.__numeroPlaza=numeroPlaza
         self.__estaLibre=estaLibre
         self.__cliente=cliente
         self.__fecha=fecha
+        self.__vehiculo = vehiculo
     def __init__(self, numeroPlaza, estaLibre):
         self.__numeroPlaza=numeroPlaza
         self.__estaLibre=estaLibre
+        self.__cliente=None
+        self.__fecha=datetime.now()
+        self.__vehiculo = None
 
     @property
     def numeroPlaza(self):
@@ -36,13 +42,22 @@ class PlazaAparcamiento():
     def fecha(self, fecha):
         self.__fecha=fecha
 
+    @property
+    def vehiculo(self):
+        return self.__vehiculo
+    @vehiculo.setter
+    def vehiculo(self, vehiculo):
+        self.__vehiculo=vehiculo
+
 
     def __str__(self):
         return "numeroPlaza: "+ str(self.numeroPlaza)+", estaLibre: "+self.estaLibre+", cliente: "+self.cliente+", fecha: "+self.fecha
 
-    def ocupar(self, cliente):
+    def ocupar(self, cliente, vehiculo):
         if self.estaLibre:
             self.cliente=cliente
+            self.vehiculo=vehiculo
+            self.fecha=datetime.now()
             return True
         else:
             return False
@@ -52,9 +67,10 @@ class PlazaAparcamiento():
         if self.estaLibre:
             return False
         else:
-        #    self.cliente=Null
+            self.cliente=None
+            self.vehiculo=None
+            self.fecha=datetime.now()
             return True
-
 
 
 

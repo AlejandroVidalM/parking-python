@@ -1,22 +1,20 @@
 class Cliente():
-    def __init__(self, nombre, apellidos, cliente, fecha):
+    def __init__(self, nombre, apellidos):
         self.__nombre=nombre
         self.__apellidos=apellidos
-        self.__cliente=cliente
-        self.__fecha=fecha
 
     @property
-    def numeroPlaza(self):
-        return self.__numeroPlaza
-    @numeroPlaza.setter
-    def numeroPlaza(self, numeroPlaza):
-        self.__numeroPlaza=numeroPlaza
+    def nombre(self):
+        return self.__nombre
+    @nombre.setter
+    def nombre(self, nombre):
+        self.__nombre=nombre
 
-# class Cliente{
-#     constructor(nombre, apellidos, fechaDeNacimiento, email, matricula){
-#         this.nombre=nombre;
-#         this.apellidos=apellidos;
-#         this.fechaDeNacimiento=fechaDeNacimiento;
-#         this.email=email;
-#         this.matricula=matricula;
-#     }
+    @property
+    def apellidos(self):
+        return self.__apellidos
+    @apellidos.setter
+    def apellidos(self, apellidos):
+        self.__apellidos=apellidos
+
+
