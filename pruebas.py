@@ -10,8 +10,8 @@ parkingTurismo=Parking(14)
 parkingMoto=Parking(3)
 parkingMovReducida=Parking(3)
 ticketRepository=TicketRepository([])
-cliente1=Cliente("Luis Miguel", "Lopez")
 vehiculo1=Motocicleta("1234ABC")
+cliente1=Cliente("Luis Miguel", "Lopez", "dni", vehiculo1)
 
 #listaParking=[parkingTurismo, parkingMoto, parkingMovReducida]
 #filename = 'parkingDatabase'
@@ -19,8 +19,12 @@ vehiculo1=Motocicleta("1234ABC")
 #pickle.dump(listaParking,outfile)
 #outfile.close()
 
-parkingMoto.ocuparPlaza(cliente1, vehiculo1, ticketRepository)
+parkingMoto.ocuparPlaza(vehiculo1, ticketRepository)
 print(ticketRepository.listaTicket[0])
+input("Espera")
+print(parkingMoto.listaPlazas[0].estaLibre)
+parkingMoto.desocuparPlaza("1234ABC", 1, "pin", ticketRepository)
 
-print(cliente1.nombre)
-print(parkingMoto.listaPlazas[1].cliente)
+print(parkingMoto.listaPlazas[0].estaLibre)
+
+print(parkingMoto.listaPlazas[0].vehiculo)

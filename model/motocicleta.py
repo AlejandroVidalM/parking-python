@@ -15,4 +15,4 @@ class Motocicleta(Vehiculo):
 
     def calcularPrecio(self, minutos):
         precioPorMinuto=0.12
-        return super().calcularPrecio()*precioPorMinuto
+        return super().calcularPrecio(minutos)*precioPorMinuto

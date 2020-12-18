@@ -10,4 +10,4 @@ class Vehiculo():
         self.__matricula=matricula
 
     def calcularPrecio(self, minutos):
-        return 1*minutos
+        return minutos

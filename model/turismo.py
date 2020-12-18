@@ -15,4 +15,4 @@ class Turismo(Vehiculo):
 
     def calcularPrecio(self, minutos):
         precioPorMinuto=0.08
-        return super().calcularPrecio()*precioPorMinuto
+        return super().calcularPrecio(minutos)*precioPorMinuto

@@ -15,4 +15,4 @@ class VehiculoMovilidadReducida(Vehiculo):
 
     def calcularPrecio(self, minutos):
         precioPorMinuto=0.1
-        return super().calcularPrecio()*precioPorMinuto
+        return super().calcularPrecio(minutos)*precioPorMinuto
